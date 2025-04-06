@@ -17,19 +17,21 @@ async def _():
 @app.cell
 def _():
     import marimo as mo
+    import polars as pl
     import pandas as pd
     import numpy as np
     from svg import SVG, G, Line, Text, Rect
     import datetime as dt
-    return G, Line, Rect, SVG, Text, dt, mo, np, pd
+    return G, Line, Rect, SVG, Text, dt, mo, np, pd, pl
 
 
 @app.cell
-def _(pd):
+def _(mo, pd):
     ## LOAD DATA
 
     # Load feeding data 
-    feeding_data = pd.read_csv("./data/feeding_data.csv")
+    feeding_path = mo.notebook_location() / "public" / "feeding_data.csv"
+    feeding_data = pd.read_csv(str(feeding_path))
 
     # Ensure date, start and end columns are in datetime format
     feeding_data['date'] = pd.to_datetime(feeding_data['date'])
@@ -37,8 +39,9 @@ def _(pd):
     feeding_data['end'] = pd.to_datetime(feeding_data['end'])
 
     # Load pigs data
-    pigs_data = pd.read_csv("./data/Exp1 - Pig registration all info combined.csv")
-    return feeding_data, pigs_data
+    pigs_path = mo.notebook_location() / "public" / "Exp1 - Pig registration all info combined.csv"
+    pigs_data = pd.read_csv(str(pigs_path))
+    return feeding_data, feeding_path, pigs_data, pigs_path
 
 
 @app.cell
