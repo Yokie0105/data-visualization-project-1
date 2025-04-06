@@ -1,5 +1,4 @@
-# [G0R72a] Data Visualization for Data Science:
-# Project 1 - Data visualization for "exploration"
+# [G0R72a] Data Visualization for Data Science: Project 1 - Data visualization for "exploration"
 
 ## Overview
 This project is part of the course **"[G0R72a] Data Visualization for Data Science"** at KU Leuven. This first project focuses on data visualization for "exploration".
