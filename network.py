@@ -32,6 +32,7 @@ def _(mo, pd):
     # Load feeding data 
     feeding_path = mo.notebook_location() / "public" / "feeding_data.csv"
     feeding_data = pd.read_csv(str(feeding_path))
+    print(feeding_path)
 
     # Ensure date, start and end columns are in datetime format
     feeding_data['date'] = pd.to_datetime(feeding_data['date'])
