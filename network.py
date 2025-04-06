@@ -26,13 +26,11 @@ def _():
 
 
 @app.cell
-def _(mo, pd):
+def _(pd):
     ## LOAD DATA
 
     # Load feeding data 
-    feeding_path = mo.notebook_location() / "public" / "feeding_data.csv"
-    feeding_data = pd.read_csv(str(feeding_path))
-    print(feeding_path)
+    feeding_data = pd.read_csv("https://raw.githubusercontent.com/Yokie0105/data-visualization-project-1/refs/heads/master/data/feeding_data.csv")
 
     # Ensure date, start and end columns are in datetime format
     feeding_data['date'] = pd.to_datetime(feeding_data['date'])
@@ -40,9 +38,8 @@ def _(mo, pd):
     feeding_data['end'] = pd.to_datetime(feeding_data['end'])
 
     # Load pigs data
-    pigs_path = mo.notebook_location() / "public" / "Exp1 - Pig registration all info combined.csv"
-    pigs_data = pd.read_csv(str(pigs_path))
-    return feeding_data, feeding_path, pigs_data, pigs_path
+    pigs_data = pd.read_csv("https://raw.githubusercontent.com/Yokie0105/data-visualization-project-1/refs/heads/master/data/Exp1%20-%20Pig%20registration%20all%20info%20combined.csv")
+    return feeding_data, pigs_data
 
 
 @app.cell
