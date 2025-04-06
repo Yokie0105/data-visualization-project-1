@@ -1,0 +1,23 @@
+version = 1
+revision = 1
+requires-python = ">=3.13"
+
+[[package]]
+name = "project"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "svg-py" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "svg-py", specifier = ">=1.6.0" }]
+
+[[package]]
+name = "svg-py"
+version = "1.6.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/36/36/d5aee35eb09591ca00d5b5569eac6aed37d1b8362fdd95c6246313add613/svg_py-1.6.0.tar.gz", hash = "sha256:18d7f82cf05ce6bff908ba6056bc0d0dca74a3fca3c119aa18fc058af88e5678", size = 40838 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/28/fd/d38412458e70291b3769fba473375661dee3a3fa7a4757548ecb41b9dbd6/svg_py-1.6.0-py3-none-any.whl", hash = "sha256:32e4e71ad42e7b5f460cac6ff4e42de6b9c9c857b5677c507565e9e4c0d945a8", size = 13478 },
+]
