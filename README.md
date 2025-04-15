@@ -5,8 +5,8 @@ This project is part of the course **"[G0R72a] Data Visualization for Data Scien
 
 ## Tools and Technologies
 The repository has three [Marimo](https://marimo.io/) notebooks that contain the visualizations for the project. Visualizations were made using Python, HTML, CSS and JavaScript.
-1. network.py
-2. pigplot.py
+1. pigplot.py
+2. network.py
 3. feeding.py
 
 ## Dataset
@@ -26,11 +26,11 @@ We use the [Pig Feed Data](https://data.mendeley.com/datasets/2mbw72m3g8/1): *â€
 Note that each station (1-10) serves 11 pigs. Each pig is expected to eat at the same station every time.
 
 ## Visualizations
-1. [network.html](https://yokie0105.github.io/data-visualization-project-1/apps/network.html)
-2. pigplot.html
+1. pigplot.html
+2. [network.html](https://yokie0105.github.io/data-visualization-project-1/apps/network.html)
 3. feeding.html
 
 ## Contributors
-- Sarah 
 - Oscar
+- Sarah 
 - Marte
