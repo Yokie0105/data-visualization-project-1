@@ -53,7 +53,7 @@ def _(Circle, Ellipse, G, Path, Title, math, my_slider):
     #create function for custom visual 
     class Pig:
         def __init__(
-            self, duration, rate, intake, station, pig, index, class_
+            self, duration, rate, intake, station, pig, index, station_pig, class_
         ):
             self.duration =  round(duration, 1)
             #self.rate =  round(intake/duration, 3)
@@ -65,6 +65,7 @@ def _(Circle, Ellipse, G, Path, Title, math, my_slider):
             self.class_ = class_ + " brushable"
             self.du = str(duration * 5)
             self.ra = str(rate * 60)
+            self.spig = station_pig
 
             self.lra = str(140 + math.log(self.rate) * 100)
             self.rra = str(220 - math.log(self.rate) * 100)
@@ -85,7 +86,7 @@ def _(Circle, Ellipse, G, Path, Title, math, my_slider):
             return G(
                 elements=[
                     #adding the title here makes it so it is visible when hovering any element of the pig (eg. The ears, The eyes,...)
-                    Title(elements=[f"Station:{self.pig}, Pig_id:{self.index}, duration:{self.duration}, rate:{self.rate}, intake:{self.intake}, Weight of station: {self.st}"]),
+                    Title(elements=[f"Station:{self.pig}, Pig_id:{self.spig} , Pig_name:{self.index}, duration:{self.duration}, rate:{self.rate}, intake:{self.intake}, Weight of station: {self.st}"]),
                     Circle(cx=0, cy=0, r=self.station, class_= self.class_ , style="fill:#ee90ae; fill-opacity:0.8"),
                     Path(style=self.learns, d=self.bears(), class_=self.class_),  #the left ear (bezier curve)
                     Path(style=self.rears, d=self.bears(), class_=self.class_),  #the right ear (bezier curve)
@@ -159,7 +160,7 @@ def _(Pig, Pig_data):
     #all pigs as array 
     pigs = []
     for idx,row in Pig_data.iterrows():
-        pigs.append(Pig(row[5], row[6], row[7], row[1], row[0], idx, "cmmk6"))
+        pigs.append(Pig(row[5], row[6], row[7], row[1], row[0], idx, row[29], "cmmk6"))
     return idx, pigs, row
 
 
@@ -283,7 +284,7 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    info = mo.md("The graphs shows for all the pigs their intake, on the x axis, against the duration, on the y axis.")
+    info = mo.md("The graphs shows for all the pigs their total intake, on the x axis, against the average duration of feedingh, on the y axis.")
 
     mo.vstack([info])
     return (info,)
