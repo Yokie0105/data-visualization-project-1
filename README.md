@@ -28,7 +28,7 @@ Note that each station (1-10) serves 11 pigs. Each pig is expected to eat at the
 ## Visualizations
 1. [pigplot.html](https://yokie0105.github.io/data-visualization-project-1/apps/pigplot.html)
 2. [network.html](https://yokie0105.github.io/data-visualization-project-1/apps/network.html)
-3. [spiral.html]((https://yokie0105.github.io/data-visualization-project-1/apps/spiral.html))
+3. [spiral.html](https://yokie0105.github.io/data-visualization-project-1/apps/spiral.html)
 
 ## Contributors
 - Oscar
