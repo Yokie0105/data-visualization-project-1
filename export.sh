@@ -1,4 +1,4 @@
-files=("pigplot.py" "network.py" "feeding.py")
+files=("pigplot.py" "network.py" "spiral.py")
 
 for file in "${files[@]}"; do
   without_extension="${file%.*}"
